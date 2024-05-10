@@ -4,7 +4,7 @@ import toast from "react-hot-toast";
 
 const CreateAssignment = () => {
 
-    const { user } = useContext(AuthContext)
+    const { user } = useContext(AuthContext);
 
     const handleCustomization = (event) => {
         console.log(event.target.value);
