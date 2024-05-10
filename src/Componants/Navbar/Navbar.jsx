@@ -10,7 +10,7 @@ const Navbar = () => {
         <li><NavLink to='/'
             className={({ isActive }) => isActive ? "text-[#23BE0A] font-bold text-lg bg-white WorkSans hover:text-[#23BE0A]" : "text-lg font-bold WorkSans text-[#131313cc] hover:text-white hover:bg-[#23BE0A]"}
         >Assignments</NavLink></li>
-        <li><NavLink to='/allArt&Craft'
+        <li><NavLink to='/login'
             className={({ isActive }) => isActive ? "text-[#23BE0A] font-bold text-lg bg-white WorkSans hover:text-[#23BE0A]" : "text-lg font-bold WorkSans text-[#131313cc] hover:text-white hover:bg-[#23BE0A]"}
         >Login</NavLink></li>
         <li><NavLink to='/allArt&Craft'
