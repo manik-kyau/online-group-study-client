@@ -80,7 +80,7 @@ const AssignmentCard = ({ assignment,assignments,setAssignments }) => {
                             <button className="btn text-white text-2xl bg-[#dfab66] hover:bg-[#e29026]"><FaEye></FaEye></button>
                         </Link>
 
-                        <Link to=''>
+                        <Link to={`/update/${_id}`}>
                             <button className="btn text-white text-2xl bg-[#666265] hover:bg-[#3C393B]"><MdModeEdit></MdModeEdit></button>
                         </Link>
 

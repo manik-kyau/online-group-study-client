@@ -14,6 +14,9 @@ const AssignmentDetails = () => {
             <img src={imageURL} alt="" />
             <h2 className="text-3xl font-bold">{title}</h2>
             <p>{description}</p>
+            <div>
+                <button className="btn">Take assignment</button>
+            </div>
         </div>
     );
 };

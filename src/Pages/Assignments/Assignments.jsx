@@ -1,12 +1,12 @@
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import AssignmentCard from "../AssignmentCard/AssignmentCard";
-import { AuthContext } from "../../Providers/AuthProvider";
+// import { AuthContext } from "../../Providers/AuthProvider";
 // import Swal from "sweetalert2";
 // import toast from "react-hot-toast";
 
 const Assignments = () => {
-    const {user} = useContext(AuthContext)
-    console.log(user?.email);
+    // const {user} = useContext(AuthContext)
+    // console.log(user?.email);
     const [assignments, setAssignments] = useState([]);
     // const [assignmentEmail,setAssignmentEmail] = useState('');
     // console.log(assignmentEmail);
@@ -15,8 +15,6 @@ const Assignments = () => {
         fetch('http://localhost:5000/assignments')
             .then(res => res.json())
             .then(data => {
-                // const remaining = data.filter(craf => craf.userEmail == user?.email);
-                // console.log(remaining);
                 setAssignments(data)
             })
     }, []);
