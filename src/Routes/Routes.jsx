@@ -3,6 +3,7 @@ import Root from "../Root/Root";
 import Home from "../Componants/Home/Home";
 import Login from "../Pages/Login";
 import Register from "../Pages/Register/Register";
+import CreateAssignment from "../Pages/CreateAssignment/CreateAssignment";
 
 const router = createBrowserRouter([
     {
@@ -12,6 +13,10 @@ const router = createBrowserRouter([
             {
                 path: '/',
                 element: <Home></Home>,
+            },
+            {
+                path: '/createAssignment',
+                element: <CreateAssignment></CreateAssignment>,
             },
             {
                 path: '/login',

@@ -2,7 +2,7 @@
 import toast from "react-hot-toast";
 import { updateProfile } from "firebase/auth";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
 
@@ -11,8 +11,8 @@ const Register = () => {
     const [registerError, setRegisterError] = useState('');
     const [showPassword, setShowPassword] = useState(false);
     const {createUser,logOut} = useContext(AuthContext);
-    // const location = useLocation();
-    // const navigate = useNavigate();
+    const location = useLocation();
+    const navigate = useNavigate();
 
     const handleRegistrationForm = e => {
         e.preventDefault();
@@ -54,15 +54,16 @@ const Register = () => {
         .then(result => {
             console.log(result.user);
             logOut()
-            // navigate(location?.state ? location.state : '/login');
+            navigate(location?.state ? location.state : '/login');
             // Update Profile
+            toast.success("Registration Successfully Done.");
             updateProfile(result.user, {
                 displayName: name,
                 photoURL: photo
             })
             .then(() => console.log('profile updated'))
             .catch(error => console.log(error))
-            toast.success("Registration Successfully Done.");
+            
         })
         .catch(error => {
             console.log(error.message);
