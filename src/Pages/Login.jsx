@@ -3,6 +3,7 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Providers/AuthProvider";
 import { GithubAuthProvider, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import toast from "react-hot-toast";
 
 const Login = () => {
     
