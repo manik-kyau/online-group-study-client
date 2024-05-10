@@ -5,32 +5,45 @@ const CreateAssignment = () => {
         console.log(event.target.value);
     };
 
+    const handleCreateAssignment = (e) =>{
+        e.preventDefault();
+        const form = e.target;
+        const title = form.title.value;
+        const description = form.description.value;
+        const marks = form.marks.value;
+        const imageURL = form.imageURL.value;
+        const difficultyLevel = form.difficultyLevel.value;
+        const date = form.date.value;
+        const assignment = {title,description,marks,imageURL,difficultyLevel,date}
+        console.log(assignment);
+    }
+
     return (
         <div>
             thi is create assignment page
-            <form className="my-12">
+            <form onSubmit={handleCreateAssignment} className="my-12">
                 <div className="mb-3">
                     <label className="block w-full">
                         <span className="mb-1 text-lg font-semibold">Title</span>
-                        <input type="text" name='title' placeholder="Enter Photo URL" required className="block w-full outline-none rounded-md shadow-sm focus:ring focus:ring-opacity-75 focus:dark:ring-violet-600 p-2 dark:bg-gray-100 border mt-1" />
+                        <input type="text" name='title' placeholder="Enter Title" className="block w-full outline-none rounded-md shadow-sm focus:ring focus:ring-opacity-75 focus:dark:ring-violet-600 p-2 dark:bg-gray-100 border mt-1" />
                     </label>
                 </div>
                 <div className="mb-3">
                     <label className="block w-full">
                         <span className="mb-1 text-lg font-semibold">Description</span>
-                        <input type="text" name='description' placeholder="Enter Photo URL" required className="block w-full outline-none rounded-md shadow-sm focus:ring focus:ring-opacity-75 focus:dark:ring-violet-600 p-2 dark:bg-gray-100 border mt-1" />
+                        <input type="text" name='description' placeholder="Enter Description" className="block w-full outline-none rounded-md shadow-sm focus:ring focus:ring-opacity-75 focus:dark:ring-violet-600 p-2 dark:bg-gray-100 border mt-1" />
                     </label>
                 </div>
                 <div className="mb-3">
                     <label className="block w-full">
                         <span className="mb-1 text-lg font-semibold">Marks</span>
-                        <input type="number" name='marks' placeholder="Enter Photo URL" required className="block w-full outline-none rounded-md shadow-sm focus:ring focus:ring-opacity-75 focus:dark:ring-violet-600 p-2 dark:bg-gray-100 border mt-1" />
+                        <input type="number" name='marks' placeholder="Enter Marks" className="block w-full outline-none rounded-md shadow-sm focus:ring focus:ring-opacity-75 focus:dark:ring-violet-600 p-2 dark:bg-gray-100 border mt-1" />
                     </label>
                 </div>
                 <div className="mb-3">
                     <label className="block w-full">
-                        <span className="mb-1 text-lg font-semibold">Marks</span>
-                        <input type="text" name='imageURL' placeholder="Enter Photo URL" required className="block w-full outline-none rounded-md shadow-sm focus:ring focus:ring-opacity-75 focus:dark:ring-violet-600 p-2 dark:bg-gray-100 border mt-1" />
+                        <span className="mb-1 text-lg font-semibold">Photo URL</span>
+                        <input type="text" name='imageURL' placeholder="Enter Photo URL" className="block w-full outline-none rounded-md shadow-sm focus:ring focus:ring-opacity-75 focus:dark:ring-violet-600 p-2 dark:bg-gray-100 border mt-1" />
                     </label>
                 </div>
                 <div className="mb-3">
@@ -47,7 +60,7 @@ const CreateAssignment = () => {
                 <div className="mb-3">
                     <label className="block w-full">
                         <span className="mb-1 text-lg font-semibold">Due Date</span>
-                        <input type="date" name='date' placeholder="Enter Photo URL" required className="block w-full outline-none rounded-md shadow-sm focus:ring focus:ring-opacity-75 focus:dark:ring-violet-600 p-2 dark:bg-gray-100 border mt-1" />
+                        <input type="date" name='date' className="block w-full outline-none rounded-md shadow-sm focus:ring focus:ring-opacity-75 focus:dark:ring-violet-600 p-2 dark:bg-gray-100 border mt-1" />
                     </label>
                 </div>
                 <div className='mt-6'>
