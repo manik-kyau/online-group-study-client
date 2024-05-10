@@ -77,15 +77,16 @@ const AssignmentCard = ({ assignment,assignments,setAssignments }) => {
 
                     <div className="space-x-4">
                         <Link to={`/details/${_id}`}>
-                            <button className="btn text-white text-2xl bg-[#dfab66] hover:bg-[#e29026]"><FaEye></FaEye></button>
+                            <button title="View Details" className="btn text-white text-2xl bg-[#dfab66] hover:bg-[#e29026]"><FaEye></FaEye></button>
                         </Link>
 
                         <Link to={`/update/${_id}`}>
-                            <button className="btn text-white text-2xl bg-[#666265] hover:bg-[#3C393B]"><MdModeEdit></MdModeEdit></button>
+                            <button title="Update" className="btn text-white text-2xl bg-[#666265] hover:bg-[#3C393B]"><MdModeEdit></MdModeEdit></button>
                         </Link>
 
                         <button
                             onClick={() => handleDelete(_id, userEmail)}
+                            title="Delete"
                             className="btn text-white text-2xl bg-[#EA4744] hover:bg-[#c02b28]"
                         ><MdDelete></MdDelete></button>
 
