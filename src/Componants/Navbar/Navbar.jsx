@@ -26,16 +26,16 @@ const Navbar = () => {
                 className={({ isActive }) => isActive ? "text-[#23BE0A] font-bold text-lg bg-white WorkSans hover:text-[#23BE0A]" : "text-lg font-bold WorkSans text-[#131313cc] hover:text-white hover:bg-[#23BE0A]"}
             >Create assignment</NavLink></li>
         }
-        {/* {
-        user && <li><NavLink to='/myArt'
+        {
+        user && <li><NavLink to='/mySubmited'
             className={({ isActive }) => isActive ? "text-[#23BE0A] font-bold text-lg bg-white WorkSans hover:text-[#23BE0A]" : "text-lg font-bold WorkSans text-[#131313cc] hover:text-white hover:bg-[#23BE0A]"}
-        >MyArt&Craft</NavLink></li>
-    } */}
-        {/* {
-        user && <li><NavLink to='/contact'
+        >MySubmited</NavLink></li>
+    }
+        {
+        user && <li><NavLink to='/pendingAssignment'
             className={({ isActive }) => isActive ? "text-[#23BE0A] font-bold text-lg bg-white WorkSans hover:text-[#23BE0A]" : "text-lg font-bold WorkSans text-[#131313cc] hover:text-white hover:bg-[#23BE0A]"}
-        >Contact Us</NavLink></li>
-    } */}
+        >PendingAssignment</NavLink></li>
+    }
     </>
 
     const handleLogOut = () => {
@@ -46,8 +46,8 @@ const Navbar = () => {
             .catch(error => console.log(error))
     }
     return (
-        <div>
-            <div className="navbar justify-between bg-base-100 px-0">
+        <div className="z-50 relative bg-none">
+            <div className="navbar justify-between bg-none px-0">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="lg:hidden mr-3">
@@ -90,7 +90,7 @@ const Navbar = () => {
                                     <Link to='/addJob' className='justify-between'>Add Job</Link>
                                 </li> */}
                                 <li>
-                                    <Link to='/'>My Posted Jobs</Link>
+                                    <Link to='/mySubmited'>My Submited</Link>
                                 </li>
 
                                 <li className='mt-2'>

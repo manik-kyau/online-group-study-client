@@ -9,6 +9,10 @@ import AssignmentDetails from "../Pages/AssignmentDetails/AssignmentDetails";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import UpdateAssignment from "../Pages/UpdateAssignment/UpdateAssignment";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
+import MySubmited from "../Pages/MySubmited/MySubmited";
+import PendingAssignment from "../Pages/PendingAssignment/PendingAssignment";
+import GiveMark from "../Pages/GiveMark/GiveMark";
+// import SubmitAssignment from "../Pages/SubmitAssignment/SubmitAssignment";
 
 const router = createBrowserRouter([
     {
@@ -39,13 +43,32 @@ const router = createBrowserRouter([
             {
                 path: '/details/:id',
                 element: <PrivateRoute><AssignmentDetails></AssignmentDetails></PrivateRoute>,
-                loader: ()=> fetch('http://localhost:5000/assignments'),
+                loader: ({params})=>fetch(`http://localhost:5000/assignments/${params.id}`),
             },
             {
                 path: '/update/:id',
                 element: <PrivateRoute><UpdateAssignment></UpdateAssignment></PrivateRoute>,
-                loader: ({params})=> fetch(`http://localhost:5000/assignment/${params.id}`)
+                loader: ({params})=> fetch(`http://localhost:5000/assignments/${params.id}`)
             },
+            {
+                path: '/mySubmited',
+                element: <PrivateRoute><MySubmited></MySubmited></PrivateRoute>,
+            },
+            {
+                path: '/pendingAssignment',
+                element: <PrivateRoute><PendingAssignment></PendingAssignment></PrivateRoute>,
+                // loader: ({params})=> fetch(`http://localhost:5000/submits/${params.id}`)
+            },
+            {
+                path: '/givemark/:id',
+                element: <PrivateRoute><GiveMark></GiveMark></PrivateRoute>,
+                loader: ({params})=> fetch(`http://localhost:5000/submits/${params.id}`)
+            },
+            // {
+            //     path: '/submitAssignment/:id',
+            //     element: <PrivateRoute><SubmitAssignment></SubmitAssignment></PrivateRoute>,
+            //     loader: ({params})=> fetch(`http://localhost:5000/assignment/${params.id}`)
+            // },
 
         ]
     },
