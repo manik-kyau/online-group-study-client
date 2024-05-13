@@ -6,14 +6,14 @@ const GiveMark = () => {
 
     const subAssignment = useLoaderData();
     // console.log(subAssignment);
-    const {_id,pdf,message,email,studentName,assignment_id,marks,title } =subAssignment;
+    const { _id, pdf, message, email, studentName, assignment_id, marks, title } = subAssignment;
 
-    const handleMark = (e) =>{
+    const handleMark = (e) => {
         e.preventDefault();
         const form = e.target;
         const givemark = form.givmark.value;
         const feedback = form.feedback.value;
-        const update = {givemark,feedback,pdf,message,email,studentName,assignment_id,marks,title}
+        const update = { givemark, feedback, pdf, message, email, studentName, assignment_id, marks, title }
         // console.log(update);
 
         fetch(`http://localhost:5000/submits/${_id}`, {
@@ -40,9 +40,26 @@ const GiveMark = () => {
 
     return (
         <div>
-            <div className="border m-4 p-5">
-                <h3 className="font-bold text-lg">Hello!</h3>
-                <p className="py-4 font-bold text-xl">Submit Your Assignment.</p>
+            <div className="border m-4 p-5 md:w-1/2 mx-auto">
+
+                <div>
+                    <p className='text-lg font-medium'>
+                        <span>Examinee Name: </span>
+                        <span>{studentName}</span>
+                    </p>
+                    <p className='text-lg font-medium'>
+                        <span>Email: </span>
+                        <span>{email}</span>
+                    </p>
+                </div>
+                <p className="py-4 font-bold text-xl">
+                    <span>Assignment: </span>
+                    <span>{title}</span>
+                </p>
+                <div className='my-4'>
+                    <p className='text-lg font-medium'>Assignment Link:</p>
+                    <a href={pdf} target='_blank' className='hover:underline text-primary'>{pdf}</a>
+                </div>
                 <form onSubmit={handleMark} action="">
                     <div>
                         <label className="block w-full">
@@ -55,7 +72,7 @@ const GiveMark = () => {
                         </label>
                     </div>
                     <div className="my-6">
-                        <button className="btn text-lg font-semibold">Submit</button>
+                        <button className="btn w-full text-white text-lg bg-[#FF3811] hover:bg-[#FF3811] font-semibold">Submit</button>
                     </div>
                 </form>
             </div>

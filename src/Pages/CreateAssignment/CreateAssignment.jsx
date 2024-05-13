@@ -5,6 +5,7 @@ import toast from "react-hot-toast";
 const CreateAssignment = () => {
 
     const { user } = useContext(AuthContext);
+    console.log(user);
 
     const handleCustomization = (event) => {
         console.log(event.target.value);
@@ -21,7 +22,8 @@ const CreateAssignment = () => {
         const date = form.date.value;
         const userEmail = user.email;
         const userName = user.displayName;
-        const newAssignment = { title, description, marks, imageURL, difficultyLevel, date,userEmail,userName }
+        const userPhoto = user.photoURL;
+        const newAssignment = { title, description, marks, imageURL, difficultyLevel, date,userEmail,userName,userPhoto }
         console.log(newAssignment);
 
         // send data to the server

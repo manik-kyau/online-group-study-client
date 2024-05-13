@@ -9,7 +9,7 @@ import { AuthContext } from "../../Providers/AuthProvider";
 // import { AuthContext } from "../../Providers/AuthProvider";
 const AssignmentCard = ({ assignment,assignments,setAssignments }) => {
 
-    const { _id, title, description, marks, imageURL, difficultyLevel, date, userEmail } = assignment;
+    const { _id, title, marks, imageURL, difficultyLevel, userEmail } = assignment;
     // console.log(userEmail);
 
     const { user } = useContext(AuthContext);
@@ -63,8 +63,8 @@ const AssignmentCard = ({ assignment,assignments,setAssignments }) => {
 
     return (
         <div>
-            <div className="bg-base-100 border hover:shadow-xl">
-                <figure><img className="h-[230px] w-full" src={imageURL} alt="Shoes" /></figure>
+            <div className="bg-base-100 border rounded-md hover:shadow-xl">
+                <figure><img className="h-[230px] w-full rounded-t-md" src={imageURL} alt="Shoes" /></figure>
                 <div className="py-6 px-4">
                     <h2 className="card-title text-2xl text-bold">{title.slice(0, 23)}</h2>
 

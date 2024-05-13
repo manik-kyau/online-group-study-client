@@ -2,10 +2,10 @@ import faq from '../../assets/images/faq.jpg';
 const Faq = () => {
     return (
         <div>
-            <div className="bg-base-100 border-2 md:p-8 mt-[900px] my-12">
+            <div className="bg-base-100 border-2  my-12">
                 <div className="flex flex-col lg:flex-row gap-8">
                     <div>
-                        <img className='h-full lg:w-[400px] rounded-lg' src={faq} />
+                        <img className='h-full lg:w-[470px] rounded-lg' src={faq} />
                     </div>
                     <div>
                         <div className="join join-vertical w-full">
