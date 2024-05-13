@@ -48,7 +48,7 @@ const PendingAssignment = () => {
                                         </td>
                                     <td className='text-base font-semibold text-end'>
                                         <Link to={`/givemark/${pAssignment._id}`}>
-                                            <button className=" py-1 w-[110px] text-base text-center rounded-3xl font-semibold bg-[#d1a66e] text-white hover:bg-[#725d41]">Give Mark</button>
+                                            <button className={pAssignment?.givemark ? " py-1 w-[110px] text-base text-center rounded-3xl font-semibold bg-green-300 text-white hover:bg-[#725d41]" : " py-1 w-[110px] text-base text-center rounded-3xl font-semibold bg-[#d1a66e] text-white hover:bg-[#725d41]"}>{pAssignment?.givemark ? "Recheck" : "Give Mark"}</button>
                                         </Link>
                                     </td>
                                 </tr>

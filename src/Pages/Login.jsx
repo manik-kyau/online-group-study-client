@@ -4,9 +4,10 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Providers/AuthProvider";
 import { GithubAuthProvider, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import toast from "react-hot-toast";
+import login from "../assets/images/login2.webp";
 
 const Login = () => {
-    
+
     const [showPassword, setShowPassword] = useState(false);
 
     const { auth, signIn } = useContext(AuthContext);
@@ -19,34 +20,34 @@ const Login = () => {
     const handleGooglesignIn = () => {
         // console.log('google mama is comming');
         signInWithPopup(auth, googleProvider)
-        .then(result => {
-            const googleUser = result.user;
-            console.log(googleUser);
-            // Navigate after login
-            navigate(location?.state ? location.state : '/');
-            toast.success('Login successfully done..');
-        })
-        .catch(error => {
-            const errorMessage = error.message;
-            console.log(errorMessage);
-        })
+            .then(result => {
+                const googleUser = result.user;
+                console.log(googleUser);
+                // Navigate after login
+                navigate(location?.state ? location.state : '/');
+                toast.success('Login successfully done..');
+            })
+            .catch(error => {
+                const errorMessage = error.message;
+                console.log(errorMessage);
+            })
     }
 
     // sign in with git hub
     const githubProvider = new GithubAuthProvider();
     const handleGithubsignIn = () => {
         signInWithPopup(auth, githubProvider)
-        .then(result => {
-            const githubUser = result.user;
-            console.log(githubUser);
-            // Navigate after login
-            navigate(location?.state ? location.state : '/');
-            toast.success('Login successfully done..');
-        })
-        .catch(error => {
-            const errorMessage = error.message;
-            console.log(errorMessage);
-        })
+            .then(result => {
+                const githubUser = result.user;
+                console.log(githubUser);
+                // Navigate after login
+                navigate(location?.state ? location.state : '/');
+                toast.success('Login successfully done..');
+            })
+            .catch(error => {
+                const errorMessage = error.message;
+                console.log(errorMessage);
+            })
     }
 
     const handleLoginForm = (e) => {
@@ -65,24 +66,24 @@ const Login = () => {
             })
             .catch(error => {
                 const errorCode = error.code;
-                
+
                 const errorMessage = error.message;
                 if (errorCode) {
                     toast.error('Invalid email or password')
                     return;
-                    }
+                }
                 console.log('Error during login:', errorMessage);
             })
     }
     return (
-        <div>
-            <div className="flex justify-center" data-aos="zoom-in">
-                <div className="w-full max-w-md p-4 rounded-md shadow-2xl sm:p-8 dark:bg-gray-50 dark:text-gray-800 my-8 lg:my-12">
+        <div className="flex flex-col md:flex-row justify-center gap-8 my-12">
+            <div className="flex" data-aos="zoom-in">
+                <div className="w-full max-w-md p-4 rounded-md border sm:p-8 dark:bg-gray-50 dark:text-gray-800 bg-opacity-60">
                     <h2 className="mb-3 text-3xl lg:text-4xl font-semibold text-center">Login to your account</h2>
                     <p className="text-base text-center dark:text-gray-600">Don't have account?
                         <Link to='/register' rel="noopener noreferrer" className="focus:underline hover:underline font-bold ml-1 text-[#23BE0A]">Register here</Link>
                     </p>
-                    <div className="my-6 space-y-4">
+                    <div className="my-6 space-y-4 ">
                         <button onClick={handleGooglesignIn} aria-label="Login with Google" type="button" className="flex items-center justify-center w-full p-4 space-x-4 border rounded-md focus:ring-2 focus:ring-offset-1 dark:border-gray-600 focus:dark:ring-violet-600">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" className="w-5 h-5 fill-current">
                                 <path d="M16.318 13.714v5.484h9.078c-0.37 2.354-2.745 6.901-9.078 6.901-5.458 0-9.917-4.521-9.917-10.099s4.458-10.099 9.917-10.099c3.109 0 5.193 1.318 6.38 2.464l4.339-4.182c-2.786-2.599-6.396-4.182-10.719-4.182-8.844 0-16 7.151-16 16s7.156 16 16 16c9.234 0 15.365-6.49 15.365-15.635 0-1.052-0.115-1.854-0.255-2.651z"></path>
@@ -127,6 +128,9 @@ const Login = () => {
                         <input type="submit" value='Login' className="w-full font-medium px-3 py-2 border rounded-md dark:border-gray-300 focus:dark:border-violet-600 bg-[#23BE0A] text-white text-lg cursor-pointer" />
                     </form>
                 </div>
+            </div>
+            <div className="w-full md:w-1/2 hidden md:flex">
+                <img className="w-full h-full" src={login} alt="" />
             </div>
         </div>
     );

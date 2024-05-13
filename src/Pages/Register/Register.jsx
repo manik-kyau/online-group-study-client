@@ -5,6 +5,7 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
+import register from '../../assets/images/register.jpg';
 
 const Register = () => {
 
@@ -72,9 +73,12 @@ const Register = () => {
     }
 
     return (
-        <div>
-            <section className="p-6 dark:text-gray-800" data-aos="flip-down">
-                <form onSubmit={handleRegistrationForm} className="container w-full max-w-xl p-8 mx-auto space-y-6 rounded-xl border-2 dark:bg-gray-50 ">
+        <div className="flex flex-col md:flex-row my-12">
+            <div className="w-1/2 hidden md:block">
+                <img className="h-full" src={register} alt="" />
+            </div>
+            <section className="md:px-6 dark:text-gray-800 md:w-1/2 " data-aos="flip-down">
+                <form onSubmit={handleRegistrationForm} className=" w-full max-w-xl p-8 mx-auto space-y-6 rounded-xl border shadow-lg dark:bg-gray-50 ">
                     <h2 className="w-full text-3xl font-bold leading-tight">Registration Now</h2>
                     <div>
                         <label className="block text-lg font-semibold">Name</label>

@@ -73,10 +73,10 @@ const MySubmited = () => {
 
             <div className="overflow-x-auto my-12">
                 <table className="table table-xs ">
-                    <thead className='bg-gray-300'>
+                    <thead className='bg-gray-300 '>
                         <tr>
                             <th></th>
-                            <th className='text-lg font-bold'>Title</th>
+                            <th className='text-lg font-bold py-4'>Title</th>
                             <th className='text-lg font-bold'>Marks</th>
                             <th className='text-lg font-bold'>Obtained Marks</th>
                             <th className='text-lg font-bold'> feedback</th>

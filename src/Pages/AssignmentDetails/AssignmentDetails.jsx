@@ -63,10 +63,10 @@ const AssignmentDetails = () => {
     return (
         <div className="my-12">
 
-            <div className="p-5 mx-auto sm:p-10 md:p-16 ">
+            <div className="p-5 mx-auto sm:px-10 md:px-16 border md:border-0 rounded-lg">
                 <div className="flex flex-col  mx-auto overflow-hidden rounded">
-                    <img src={imageURL} alt="" className="w-full h-60 sm:h-96 bg-gray-500" />
-                    <div className="md:p-6 md:pb-8 m-4 mx-auto md:-mt-16 space-y-6 sm:px-10 sm:mx-12 lg:rounded-md md:bg-gray-900">
+                    <img src={imageURL} alt="" className="w-full h-60 sm:h-[450px] bg-gray-500" />
+                    <div className="md:p-6 md:pb-8 m-4 mx-auto md:-mt-16 space-y-6 sm:px-10 sm:mx-12 lg:rounded-md md:bg-gray-700">
                         <div className="space-y-2">
                             <p className="md:text-gray-100">
                                 <span className="text-base font-medium">DeadLine: </span>
