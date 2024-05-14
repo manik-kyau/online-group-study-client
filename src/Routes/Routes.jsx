@@ -64,11 +64,6 @@ const router = createBrowserRouter([
                 element: <PrivateRoute><GiveMark></GiveMark></PrivateRoute>,
                 loader: ({params})=> fetch(`http://localhost:5000/submits/${params.id}`)
             },
-            // {
-            //     path: '/submitAssignment/:id',
-            //     element: <PrivateRoute><SubmitAssignment></SubmitAssignment></PrivateRoute>,
-            //     loader: ({params})=> fetch(`http://localhost:5000/assignment/${params.id}`)
-            // },
 
         ]
     },

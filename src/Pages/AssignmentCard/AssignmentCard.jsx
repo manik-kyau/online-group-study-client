@@ -5,17 +5,13 @@ import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
-// import { useContext } from "react";
-// import { AuthContext } from "../../Providers/AuthProvider";
-const AssignmentCard = ({ assignment,assignments,setAssignments }) => {
+const AssignmentCard = ({ handleAssignment,assignment,assignments,setAssignments }) => {
+    // console.log(assignment);
 
     const { _id, title, marks, imageURL, difficultyLevel, userEmail } = assignment;
     // console.log(userEmail);
 
     const { user } = useContext(AuthContext);
-
-    // const { user } = useContext(AuthContext);
-    // console.log(user?.email);
 
     const handleDelete = (_id, userEmail) => {
         // console.log(userEmail);
@@ -54,7 +50,7 @@ const AssignmentCard = ({ assignment,assignments,setAssignments }) => {
         else {
             Swal.fire({
                 title: 'Error!',
-                text: 'This Assignment is not Yours',
+                text: 'This Assignment You not Create!',
                 icon: 'error',
                 confirmButtonText: 'Cool'
             })
@@ -77,7 +73,7 @@ const AssignmentCard = ({ assignment,assignments,setAssignments }) => {
 
                     <div className="space-x-4">
                         <Link to={`/details/${_id}`}>
-                            <button title="View Details" className="btn text-white text-2xl bg-[#dfab66] hover:bg-[#e29026]"><FaEye></FaEye></button>
+                            <button title="View Details" className="btn text-white text-2xl bg-gradient-to-r from-[#7E90FE] to-[#9873FF]"><FaEye></FaEye></button>
                         </Link>
 
                         <Link to={`/update/${_id}`}>
@@ -85,7 +81,12 @@ const AssignmentCard = ({ assignment,assignments,setAssignments }) => {
                         </Link>
 
                         <button
-                            onClick={() => handleDelete(_id, userEmail)}
+                            onClick={() => {
+                                handleDelete(_id, userEmail)
+                                handleAssignment(assignment)
+                            }
+                                
+                            }
                             title="Delete"
                             className="btn text-white text-2xl bg-[#EA4744] hover:bg-[#c02b28]"
                         ><MdDelete></MdDelete></button>

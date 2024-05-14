@@ -17,24 +17,19 @@ const Navbar = () => {
 
     const NavItems = <>
         <li><NavLink to='/'
-            className={({ isActive }) => isActive ? "text-[#23BE0A] font-bold text-lg hover:text-[#23BE0A]" : "text-lg font-bold WorkSans text-[#131313cc] hover:text-white hover:bg-[#23BE0A]"}
+            className={({ isActive }) => isActive ? "bg-gradient-to-r from-[#7E90FE] to-[#9873FF] text-transparent bg-clip-text font-bold text-lg " : "text-lg font-bold WorkSans text-[#131313cc] hover:text-white hover:bg-gradient-to-r from-[#7E90FE] to-[#9873FF]"}
         >Home</NavLink></li>
         <li><NavLink to='/assignments'
-            className={({ isActive }) => isActive ? "text-[#23BE0A] font-bold text-lg hover:text-[#23BE0A]" : "text-lg font-bold WorkSans text-[#131313cc] hover:text-white hover:bg-[#23BE0A]"}
+            className={({ isActive }) => isActive ? "bg-gradient-to-r from-[#7E90FE] to-[#9873FF] text-transparent bg-clip-text font-bold text-lg " : "text-lg font-bold WorkSans text-[#131313cc] hover:text-white hover:bg-gradient-to-r from-[#7E90FE] to-[#9873FF]"}
         >Assignments</NavLink></li>
         {
             user && <li><NavLink to='/createAssignment'
-                className={({ isActive }) => isActive ? "text-[#23BE0A] font-bold text-lg hover:text-[#23BE0A]" : "text-lg font-bold WorkSans text-[#131313cc] hover:text-white hover:bg-[#23BE0A]"}
+                className={({ isActive }) => isActive ? "bg-gradient-to-r from-[#7E90FE] to-[#9873FF] text-transparent bg-clip-text font-bold text-lg" : "text-lg font-bold WorkSans text-[#131313cc] hover:text-white hover:bg-gradient-to-r from-[#7E90FE] to-[#9873FF]"}
             >Create assignment</NavLink></li>
         }
-        {/* {
-            user && <li><NavLink to='/mySubmited'
-                className={({ isActive }) => isActive ? "text-[#23BE0A] font-bold text-lg hover:text-[#23BE0A]" : "text-lg font-bold WorkSans text-[#131313cc] hover:text-white hover:bg-[#23BE0A]"}
-            >MySubmited</NavLink></li>
-        } */}
         {
             user && <li><NavLink to='/pendingAssignment'
-                className={({ isActive }) => isActive ? "text-[#23BE0A] font-bold text-lg hover:text-[#23BE0A]" : "text-lg font-bold WorkSans text-[#131313cc] hover:text-white hover:bg-[#23BE0A]"}
+                className={({ isActive }) => isActive ? "bg-gradient-to-r from-[#7E90FE] to-[#9873FF] text-transparent bg-clip-text font-bold text-lg " : "text-lg font-bold WorkSans text-[#131313cc] hover:text-white hover:bg-gradient-to-r from-[#7E90FE] to-[#9873FF]"}
             >PendingAssignment</NavLink></li>
         }
     </>
@@ -70,7 +65,7 @@ const Navbar = () => {
                     </div>
                     <a className="text-3xl font-bold text-[#131313]">
                         {/* <img className="h-16 w-16" src={logo} alt="" /> */}
-                        StudyBuddy
+                        Study<span className="bg-gradient-to-r from-[#7E90FE] to-[#9873FF] text-transparent bg-clip-text">Buddy</span>
                     </a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
@@ -129,11 +124,11 @@ const Navbar = () => {
                     <div>
                         {
                             user ? "" : <Link to='/register'>
-                                <button className="btn mr-5 hover:bg-[#23BE0A] text-lg font-semibold hover:text-white">Register</button>
+                                <button className="btn mr-5 bg-none hover:bg-gradient-to-r from-[#7E90FE] to-[#9873FF] text-lg font-semibold hover:text-white">Register</button>
                             </Link>
                         }
                         {
-                            user ? "" : <Link to='/login' className="btn bg-[#23BE0A] text-white hover:bg-[#23BE0A] text-lg font-semibold">Login
+                            user ? "" : <Link to='/login' className="btn bg-[#9873FF] text-white hover:bg-gradient-to-r from-[#7E90FE] to-[#9873FF] text-lg font-semibold">Login
                             </Link>
                         }
                     </div>

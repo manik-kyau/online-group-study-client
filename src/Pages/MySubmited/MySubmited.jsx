@@ -1,5 +1,6 @@
 import { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../Providers/AuthProvider';
+import { Helmet } from 'react-helmet-async';
 
 const MySubmited = () => {
     const { user } = useContext(AuthContext);
@@ -18,6 +19,9 @@ const MySubmited = () => {
 
     return (
         <div className=''>
+            <Helmet>
+                <title>MyAssignment</title>
+            </Helmet>
 
             <div className="overflow-x-auto my-12">
                 <table className="table table-xs ">
@@ -28,7 +32,7 @@ const MySubmited = () => {
                             <th className='text-lg font-bold'>Marks</th>
                             <th className='text-lg font-bold'>Obtained Marks</th>
                             <th className='text-lg font-bold'> feedback</th>
-                            <th className='text-lg font-bold'>Status</th>
+                            <th className='text-lg font-bold text-center'>Status</th>
                         </tr>
                     </thead>
                     <tbody>

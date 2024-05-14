@@ -9,7 +9,7 @@ const FeatureCard = ({feature}) => {
                     <h2 className="text-xl font-bold pb-2">{title}</h2>
                     <p className="text-base font-medium">{description.slice(0,144)}</p>
                     <div className="flex justify-center text-center">
-                        <button className=" flex items-center gap-1 text-base font-extrabold py-3 text-[#23BE0A]">Buy Now <FaArrowRight></FaArrowRight></button>
+                        <button className=" flex items-center gap-1 text-base font-extrabold py-3 text-[#23BE0A]">Learn More <FaArrowRight></FaArrowRight></button>
                     </div>
                 </div>
             </div>

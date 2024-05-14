@@ -49,11 +49,14 @@ const UpdateAssignment = () => {
 
     return (
         <>
-        <Helmet>
-            <title>Update Assignment</title>
-        </Helmet>
+            <Helmet>
+                <title>UpdateAssignment</title>
+            </Helmet>
             <div>
-                thi is create assignment page
+                <div className='text-center space-y-4 mt-8'>
+                    <h2 className='text-5xl font-bold'>Update Assignment</h2>
+                    <p className='text-base font-medium md:w-2/3 mx-auto'>An update assignment involves revising or modifying existing work in response to new requirements, feedback, or changes in circumstances. It requires assessing previous work, understanding the reasons behind the updates, and planning how to implement them effectively.</p>
+                </div>
                 <form onSubmit={handleUpdateAssignment} className="my-12">
                     <div className="mb-3">
                         <label className="block w-full">
@@ -131,7 +134,7 @@ const UpdateAssignment = () => {
                         </label>
                     </div>
                     <div className='mt-6'>
-                        <button type="submit" className="bg-[#D2B48C] hover:bg-[#D2B48C] text-lg w-full text-[#331A15] font-bold py-2 px-4 rounded">Create Assignment</button>
+                        <button type="submit" className="bg-gradient-to-r from-[#7E90FE] to-[#9873FF] text-lg w-full text-white font-bold py-2 px-4 rounded">Create Assignment</button>
                     </div>
                 </form>
             </div>

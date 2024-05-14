@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Providers/AuthProvider';
+import { Helmet } from 'react-helmet-async';
 
 const PendingAssignment = () => {
     const {user} = useContext(AuthContext);
@@ -8,7 +9,7 @@ const PendingAssignment = () => {
     // const { _id, title, email, marks, assignment_id, studentName, pdf } = pendingAssignment;
 
     useEffect(() => {
-        fetch('http://localhost:5000/submits',{credentials: 'include'})
+        fetch('http://localhost:5000/submits')
             .then(res => res.json())
             .then(data => {
                 const remaining = data.filter(dta => dta.givemark === undefined);
@@ -19,6 +20,9 @@ const PendingAssignment = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>PendingAssignment</title>
+            </Helmet>
             <h2>Pending assignment: {pendingAssignment.length}</h2>
 
             <div className="overflow-x-auto my-12">
@@ -50,7 +54,7 @@ const PendingAssignment = () => {
                                     </td>
                                     <td className='text-base font-semibold text-end'>
                                         <Link to={`/givemark/${pAssignment._id}`}>
-                                            <button className={pAssignment?.givemark ? " py-1 w-[110px] text-base text-center rounded-3xl font-semibold bg-green-300 text-white hover:bg-[#725d41]" : " py-1 w-[110px] text-base text-center rounded-3xl font-semibold bg-[#d1a66e] text-white hover:bg-[#725d41]"}>{pAssignment?.givemark ? "Recheck" : "Give Mark"}</button>
+                                            <button className=" py-1 w-[110px] text-base text-center rounded-3xl font-semibold  text-white bg-gradient-to-r from-[#7E90FE] to-[#9873FF]">Give Mark</button>
                                         </Link>
                                     </td>
                                 </tr>
