@@ -1,17 +1,19 @@
-import React, { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../Providers/AuthProvider';
 
 const PendingAssignment = () => {
+    const {user} = useContext(AuthContext);
     const [pendingAssignment, setPendingAssignment] = useState([]);
-    const { _id, title, email, marks, assignment_id, studentName, pdf } = pendingAssignment;
+    // const { _id, title, email, marks, assignment_id, studentName, pdf } = pendingAssignment;
 
     useEffect(() => {
-        fetch('http://localhost:5000/submits')
+        fetch('http://localhost:5000/submits',{credentials: 'include'})
             .then(res => res.json())
             .then(data => {
-                // const remaining = data.filter(dta =>dta.givemark === undefined);
-                // setPendingAssignment(remaining)
-                setPendingAssignment(data);
+                const remaining = data.filter(dta => dta.givemark === undefined);
+                setPendingAssignment(remaining);
+                // setPendingAssignment(data);
             })
     }, [])
 
@@ -27,7 +29,7 @@ const PendingAssignment = () => {
                             <th className='text-lg font-bold py-4'>Title</th>
                             <th className='text-lg font-bold'>Marks</th>
                             <th className='text-lg font-bold'>Examinee Name</th>
-                            <th className='text-lg font-bold'> Status</th>
+                            <th className='text-lg font-bold text-center'> Status</th>
                             <th className='text-lg font-bold'></th>
                         </tr>
                     </thead>
@@ -44,8 +46,8 @@ const PendingAssignment = () => {
                                     </td>
 
                                     <td className='text-base text-center font-semibold'>
-                                    <div className={pAssignment?.feedback ? 'bg-green-100 text-green-500 rounded-xl px-2' : 'bg-red-200 text-red-500 rounded-xl px-2'}>{pAssignment?.givemark ? "Complate" : "Pending"}</div>
-                                        </td>
+                                        <div className={pAssignment?.feedback ? 'bg-green-100 text-green-500 rounded-xl px-2' : 'bg-red-200 text-red-500 rounded-xl px-2'}>{pAssignment?.givemark ? "Complate" : "Pending"}</div>
+                                    </td>
                                     <td className='text-base font-semibold text-end'>
                                         <Link to={`/givemark/${pAssignment._id}`}>
                                             <button className={pAssignment?.givemark ? " py-1 w-[110px] text-base text-center rounded-3xl font-semibold bg-green-300 text-white hover:bg-[#725d41]" : " py-1 w-[110px] text-base text-center rounded-3xl font-semibold bg-[#d1a66e] text-white hover:bg-[#725d41]"}>{pAssignment?.givemark ? "Recheck" : "Give Mark"}</button>

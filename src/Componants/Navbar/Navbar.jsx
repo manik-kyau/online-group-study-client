@@ -69,7 +69,8 @@ const Navbar = () => {
                         </ul>
                     </div>
                     <a className="text-3xl font-bold text-[#131313]">
-                        <img className="h-16 w-16" src={logo} alt="" />
+                        {/* <img className="h-16 w-16" src={logo} alt="" /> */}
+                        StudyBuddy
                     </a>
                 </div>
                 <div className="navbar-center hidden lg:flex">

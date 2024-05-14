@@ -77,8 +77,8 @@ const Login = () => {
     }
     return (
         <div className="flex flex-col md:flex-row justify-center gap-8 my-12">
-            <div className="flex" data-aos="zoom-in">
-                <div className="w-full max-w-md p-4 rounded-md border sm:p-8 dark:bg-gray-50 dark:text-gray-800 bg-opacity-60">
+            <div className="flex w-full md:w-1/2" data-aos="zoom-in ">
+                <div className="w-full  p-4 rounded-lg shadow-xl sm:p-8 dark:bg-gray-50 dark:text-gray-800 bg-opacity-60">
                     <h2 className="mb-3 text-3xl lg:text-4xl font-semibold text-center">Login to your account</h2>
                     <p className="text-base text-center dark:text-gray-600">Don't have account?
                         <Link to='/register' rel="noopener noreferrer" className="focus:underline hover:underline font-bold ml-1 text-[#23BE0A]">Register here</Link>

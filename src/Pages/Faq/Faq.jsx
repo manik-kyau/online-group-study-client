@@ -1,9 +1,9 @@
 import faq from '../../assets/images/faq.jpg';
 const Faq = () => {
     return (
-        <div className='md:mt-20'>
+        <div className='mt-12 md:mt-20'>
             <div className='text-center'>
-                <h2 className="text-3xl font-semibold sm:text-5xl">Frequently Asked Questions</h2>
+                <h2 className="text-3xl font-bold sm:text-5xl">Frequently Asked Questions</h2>
                 <p className="mt-4 mb-8 dark:text-gray-600 md:w-2/3 mx-auto">Frequently Asked Questions, are documents designed to provide answers to common inquiries about a specific topic, product, service, or organization. They serve to address recurring concerns, saving users time from having to reach out to support channels or search for answers elsewhere.</p>
             </div>
             <div className="bg-base-100 my-12">

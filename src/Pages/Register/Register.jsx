@@ -17,10 +17,13 @@ const Register = () => {
 
     const handleRegistrationForm = e => {
         e.preventDefault();
-        const name = e.target.name.value;
-        const email = e.target.email.value;
-        const photo = e.target.photo.value;
-        const password = e.target.password.value;
+        const form = e.target;
+        const name = form.name.value;
+        const email = form.email.value;
+        const photo = form.photo.value;
+        const password = form.password.value;
+
+        // const user = {name,email,photo,password}
 
         // Reset error message
         setRegisterError('');
@@ -64,7 +67,24 @@ const Register = () => {
             })
             .then(() => console.log('profile updated'))
             .catch(error => console.log(error))
-            
+
+            // create user inMongodb
+            const user = {name,email,photo,password}
+
+            fetch('http://localhost:5000/users',{
+                method:"POST",
+                headers:{
+                    "content-type":"application/json"
+                },
+                body: JSON.stringify(user)
+            })
+            .then(res => res.json())
+            .then(data=>{
+                console.log(data);
+                // if(data.insertedId){
+                //     toast.success("Create user successfully done.")
+                // }
+            })
         })
         .catch(error => {
             console.log(error.message);
