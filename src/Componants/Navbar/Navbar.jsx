@@ -63,7 +63,6 @@ const Navbar = () => {
                         </ul>
                     </div>
                     <h2 className="text-3xl font-bold ">
-                        {/* <img className="h-16 w-16" src={logo} alt="" /> */}
                         Study<span className="bg-gradient-to-r from-[#7E90FE] to-[#9873FF] text-transparent bg-clip-text">Buddy</span>
                     </h2>
                 </div>

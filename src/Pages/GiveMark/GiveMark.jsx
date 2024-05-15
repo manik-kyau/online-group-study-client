@@ -1,8 +1,8 @@
-import React from 'react';
+
 import { Helmet } from 'react-helmet-async';
 import { useLoaderData, useNavigate } from 'react-router-dom';
-import Swal from 'sweetalert2';
 import assignment from '../../assets/images/assignmnt.jpg'
+import toast from 'react-hot-toast';
 
 const GiveMark = () => {
     const navigate = useNavigate();
@@ -30,12 +30,7 @@ const GiveMark = () => {
                 console.log(data);
                 if (data.modifiedCount > 0) {
                     navigate('/pendingAssignment')
-                    Swal.fire({
-                        title: 'success!',
-                        text: 'Assignment update Successfully Done.',
-                        icon: 'success',
-                        confirmButtonText: 'Cool'
-                    })
+                    toast.success("Assignment view complate & mark done.")
                 }
             })
     }
@@ -47,21 +42,11 @@ const GiveMark = () => {
             </Helmet>
 
             <div className='mt-8'>
-                <h2 className="text-3xl mt-8 md:text-4xl lg:text-5xl font-bold text-center py-4 mb-8 md:mb-12 bg-gray-100 rounded-md"
+                <h2 className="text-3xl  md:text-4xl lg:text-5xl font-bold text-center py-4 md:mb-12 bg-gray-100 rounded-md"
                 >Give Marks</h2>
             </div>
-            <div className='flex flex-col md:flex-row my-12 gap-8'>
+            <div className='flex flex-col md:flex-row mb-12 gap-8'>
                 <div className="p-5 md:w-1/2 md:shadow-lg">
-                    {/* <div>
-                        <p className='text-lg font-medium'>
-                            <span>Examinee Name: </span>
-                            <span>{studentName}</span>
-                        </p>
-                        <p className='text-lg font-medium'>
-                            <span>Email: </span>
-                            <span>{email}</span>
-                        </p>
-                    </div> */}
                     <p className="pt-4 font-bold text-xl">
                         <span>Assignment: </span>
                         <span>{title}</span>

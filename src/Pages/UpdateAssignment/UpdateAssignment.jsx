@@ -1,9 +1,9 @@
 import { Helmet } from "react-helmet-async";
 import { useLoaderData, useNavigate } from "react-router-dom";
-import Swal from "sweetalert2";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { useState } from "react";
+import toast from "react-hot-toast";
 
 const UpdateAssignment = () => {
 
@@ -41,12 +41,7 @@ const UpdateAssignment = () => {
                 console.log(data);
                 if (data.modifiedCount > 0) {
                     navigate('/assignments')
-                    Swal.fire({
-                        title: 'success!',
-                        text: 'Assignment update Successfully Done.',
-                        icon: 'success',
-                        confirmButtonText: 'Cool'
-                    })
+                    toast.success("Assignment update Successfully Done.")
                 }
             })
     }

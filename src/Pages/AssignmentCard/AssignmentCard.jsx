@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
+import PropTypes from 'prop-types';
+
 const AssignmentCard = ({ assignment,assignments,setAssignments }) => {
     // console.log(assignment);
 
@@ -92,5 +94,10 @@ const AssignmentCard = ({ assignment,assignments,setAssignments }) => {
         </div>
     );
 };
+AssignmentCard.propTypes = {
+    setAssignments: PropTypes.func.isRequired,
+    assignments: PropTypes.array.isRequired,
+    assignment: PropTypes.object.isRequired,
+}
 
 export default AssignmentCard;

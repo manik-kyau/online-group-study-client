@@ -129,7 +129,6 @@ const CreateAssignment = () => {
                                 autoComplete="on"
                                 className="w-[462px] md:w-[460px] lg:w-[572px] outline-none rounded-md shadow-sm focus:ring focus:ring-opacity-75 focus:dark:ring-violet-600 p-2 dark:bg-gray-100 border mt-[2px]"
                                 />
-                                {/* <input type="date" name='date' required className="block w-full outline-none rounded-md shadow-sm focus:ring focus:ring-opacity-75 focus:dark:ring-violet-600 p-2 dark:bg-gray-100 border mt-1" /> */}
                             </label>
                         </div>
                     </div>

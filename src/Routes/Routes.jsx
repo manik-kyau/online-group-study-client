@@ -12,7 +12,6 @@ import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import MySubmited from "../Pages/MySubmited/MySubmited";
 import PendingAssignment from "../Pages/PendingAssignment/PendingAssignment";
 import GiveMark from "../Pages/GiveMark/GiveMark";
-// import SubmitAssignment from "../Pages/SubmitAssignment/SubmitAssignment";
 
 const router = createBrowserRouter([
     {
@@ -57,7 +56,6 @@ const router = createBrowserRouter([
             {
                 path: '/pendingAssignment',
                 element: <PrivateRoute><PendingAssignment></PendingAssignment></PrivateRoute>,
-                // loader: ({params})=> fetch(`http://localhost:5000/submits/${params.id}`)
             },
             {
                 path: '/givemark/:id',

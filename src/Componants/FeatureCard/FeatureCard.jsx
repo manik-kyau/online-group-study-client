@@ -1,4 +1,6 @@
 import { FaArrowRight } from "react-icons/fa";
+import PropTypes from 'prop-types';
+
 const FeatureCard = ({feature}) => {
     const {title,description, img} = feature;
     return (
@@ -16,5 +18,8 @@ const FeatureCard = ({feature}) => {
         </div>
     );
 };
+FeatureCard.propTypes = {
+    feature: PropTypes.object.isRequired
+}
 
 export default FeatureCard;

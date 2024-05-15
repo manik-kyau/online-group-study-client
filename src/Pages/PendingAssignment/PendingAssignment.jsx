@@ -1,11 +1,10 @@
-import { useContext, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { AuthContext } from '../../Providers/AuthProvider';
 import { Helmet } from 'react-helmet-async';
 import useAxiosSecure from '../../Hooks/useAxiosSecure';
 
 const PendingAssignment = () => {
-    const {user} = useContext(AuthContext);
+
     const [pendingAssignment, setPendingAssignment] = useState([]);
     const axiosSecure = useAxiosSecure()
     // const { _id, title, email, marks, assignment_id, studentName, pdf } = pendingAssignment;
