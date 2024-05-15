@@ -9,7 +9,7 @@ import "react-datepicker/dist/react-datepicker.css";
 const CreateAssignment = () => {
 
     const { user } = useContext(AuthContext);
-    const navigate = useNavigate()
+    const navigate = useNavigate();
 
     const [startDate, setStartDate] = useState(new Date());
 

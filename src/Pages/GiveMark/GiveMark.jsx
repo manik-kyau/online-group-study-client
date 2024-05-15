@@ -1,11 +1,11 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import assignment from '../../assets/images/assignmnt.jpg'
 
 const GiveMark = () => {
-
+    const navigate = useNavigate();
     const subAssignment = useLoaderData();
     // console.log(subAssignment);
     const { _id, pdf, message, email, studentName, assignment_id, marks, title } = subAssignment;
@@ -29,7 +29,7 @@ const GiveMark = () => {
             .then(data => {
                 console.log(data);
                 if (data.modifiedCount > 0) {
-                    // navigate('/assignments')
+                    navigate('/pendingAssignment')
                     Swal.fire({
                         title: 'success!',
                         text: 'Assignment update Successfully Done.',

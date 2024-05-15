@@ -13,10 +13,6 @@ const AssignmentDetails = () => {
     const { user } = useContext(AuthContext);
     console.log(assignmentData);
 
-    // const { id } = useParams();
-
-    // const singleAssignment = assignmentData.find(data => data._id === id);
-    // const { _id, title, description, marks, imageURL, difficultyLevel, date } = singleAssignment;
     const { _id, title, description, marks, imageURL, difficultyLevel, date } = assignmentData;
 
     const handleModal = (e) => {
@@ -111,18 +107,18 @@ const AssignmentDetails = () => {
                                 <div className="modal-box ">
                                     <form method="dialog">
                                         {/* if there is a button in form, it will close the modal */}
-                                        <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2 text-gray-900">✕</button>
+                                        <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2 ">✕</button>
                                     </form>
                                     <div className="border m-4 p-5">
-                                        <p className="py-4 font-bold text-xl text-gray-900">Submit Your Assignment.</p>
+                                        <p className="py-4 font-bold text-xl ">Submit Your Assignment.</p>
                                         <form onSubmit={handleModal} action="">
                                             <div>
                                                 <label className="block w-full">
-                                                    <span className="mb-1 text-gray-900 text-lg font-semibold">Assignment PDF/Doc</span>
+                                                    <span className="mb-1 text-lg font-semibold">Assignment PDF/Doc</span>
                                                     <input type="text" name='pdf' placeholder="Enter Description" className="block w-full outline-none rounded-md placeholder:text-gray-400 shadow-sm focus:ring focus:ring-opacity-75 focus:dark:ring-violet-600 p-2 dark:bg-gray-100 border mt-1" />
                                                 </label>
                                                 <label className="block w-full mt-5">
-                                                    <span className="mb-1 text-lg font-semibold text-gray-900">Nodes</span>
+                                                    <span className="mb-1 text-lg font-semibold ">Nodes</span>
                                                     <textarea name="message" id="" placeholder="Enter Description" className="block  w-full outline-none rounded-md shadow-sm focus:ring focus:ring-opacity-75 focus:dark:ring-violet-600 p-2 dark:bg-gray-100 border mt-2" ></textarea>
                                                 </label>
                                             </div>
@@ -136,38 +132,6 @@ const AssignmentDetails = () => {
                         </div>
                     </div>
                 </div>
-            </div>
-
-
-            <div>
-                {/* Modal */}
-                {/* <button className="btn" onClick={() => document.getElementById('my_modal_3').showModal()}>Take Assignment</button>
-                <dialog id="my_modal_3" className="modal">
-                    <div className="modal-box ">
-                        <form method="dialog"> */}
-                {/* if there is a button in form, it will close the modal */}
-                {/* <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
-                        </form> */}
-                {/* <div className="border m-4 p-5">
-                            <p className="py-4 font-bold text-xl">Submit Your Assignment.</p>
-                            <form onSubmit={handleModal} action="">
-                                <div>
-                                    <label className="block w-full">
-                                        <span className="mb-1 text-lg font-semibold">Assignment PDF/doc</span>
-                                        <input type="text" name='pdf' placeholder="Enter Description" className="block w-full outline-none rounded-md shadow-sm focus:ring focus:ring-opacity-75 focus:dark:ring-violet-600 p-2 dark:bg-gray-100 border mt-1" />
-                                    </label>
-                                    <label className="block w-full mt-5">
-                                        <span className="mb-1 text-lg font-semibold">Message</span>
-                                        <textarea name="message" id="" placeholder="Enter Description" className="block  w-full outline-none rounded-md shadow-sm focus:ring focus:ring-opacity-75 focus:dark:ring-violet-600 p-2 dark:bg-gray-100 border mt-2" ></textarea>
-                                    </label>
-                                </div>
-                                <div className="my-6">
-                                    <button className="btn text-lg font-semibold">Submit</button>
-                                </div>
-                            </form>
-                        </div> */}
-                {/* </div>
-                </dialog> */}
             </div>
         </div>
     );

@@ -10,7 +10,7 @@ const Footer = () => {
                             Study<span className="bg-gradient-to-r from-[#7E90FE] to-[#9873FF] text-transparent bg-clip-text">Buddy</span>
                         </p>
 
-                        Providing reliable tech since 1992</p>
+                        Providing reliable tech since 2020</p>
                 </aside>
                 <nav>
                     <h6 className="footer-title">Social</h6>

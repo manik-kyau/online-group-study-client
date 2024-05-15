@@ -15,14 +15,6 @@ const Assignments = () => {
             })
     }, []);
 
-    // const handleCustomization = (event) => {
-    //     console.log(event.target.value);
-    // };
-
-    const handleAssignment = () => {
-        console.log('ami ki parbo');
-    }
-
     const difficultyLevels = Array.from(
         new Set(assignments.map((res) => res.difficultyLevel))
     )
@@ -62,7 +54,6 @@ const Assignments = () => {
                             assignment={assignment}
                             assignments={assignments}
                             setAssignments={setAssignments}
-                            // handleAssignment={handleAssignment}
                         ></AssignmentCard>)
                     }
                 </div>

@@ -1,6 +1,5 @@
 
 import { Link, NavLink } from "react-router-dom";
-import logo from '../../assets/images/logo.jpg';
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
 
@@ -17,19 +16,19 @@ const Navbar = () => {
 
     const NavItems = <>
         <li><NavLink to='/'
-            className={({ isActive }) => isActive ? "bg-gradient-to-r from-[#7E90FE] to-[#9873FF] text-transparent bg-clip-text font-bold text-lg " : "text-lg font-bold WorkSans text-[#131313cc] hover:text-white hover:bg-gradient-to-r from-[#7E90FE] to-[#9873FF]"}
+            className={({ isActive }) => isActive ? "bg-gradient-to-r from-[#7E90FE] to-[#9873FF] text-transparent bg-clip-text font-bold text-lg " : "text-lg font-bold WorkSans hover:text-white hover:bg-gradient-to-r from-[#7E90FE] to-[#9873FF]"}
         >Home</NavLink></li>
         <li><NavLink to='/assignments'
-            className={({ isActive }) => isActive ? "bg-gradient-to-r from-[#7E90FE] to-[#9873FF] text-transparent bg-clip-text font-bold text-lg " : "text-lg font-bold WorkSans text-[#131313cc] hover:text-white hover:bg-gradient-to-r from-[#7E90FE] to-[#9873FF]"}
+            className={({ isActive }) => isActive ? "bg-gradient-to-r from-[#7E90FE] to-[#9873FF] text-transparent bg-clip-text font-bold text-lg " : "text-lg font-bold WorkSans hover:text-white hover:bg-gradient-to-r from-[#7E90FE] to-[#9873FF]"}
         >Assignments</NavLink></li>
         {
             user && <li><NavLink to='/createAssignment'
-                className={({ isActive }) => isActive ? "bg-gradient-to-r from-[#7E90FE] to-[#9873FF] text-transparent bg-clip-text font-bold text-lg" : "text-lg font-bold WorkSans text-[#131313cc] hover:text-white hover:bg-gradient-to-r from-[#7E90FE] to-[#9873FF]"}
+                className={({ isActive }) => isActive ? "bg-gradient-to-r from-[#7E90FE] to-[#9873FF] text-transparent bg-clip-text font-bold text-lg" : "text-lg font-bold WorkSans hover:text-white hover:bg-gradient-to-r from-[#7E90FE] to-[#9873FF]"}
             >Create assignment</NavLink></li>
         }
         {
             user && <li><NavLink to='/pendingAssignment'
-                className={({ isActive }) => isActive ? "bg-gradient-to-r from-[#7E90FE] to-[#9873FF] text-transparent bg-clip-text font-bold text-lg " : "text-lg font-bold WorkSans text-[#131313cc] hover:text-white hover:bg-gradient-to-r from-[#7E90FE] to-[#9873FF]"}
+                className={({ isActive }) => isActive ? "bg-gradient-to-r from-[#7E90FE] to-[#9873FF] text-transparent bg-clip-text font-bold text-lg " : "text-lg font-bold WorkSans hover:text-white hover:bg-gradient-to-r from-[#7E90FE] to-[#9873FF]"}
             >PendingAssignment</NavLink></li>
         }
     </>
@@ -53,7 +52,7 @@ const Navbar = () => {
 
     return (
         <div className="">
-            <div className="navbar justify-between bg-none px-0">
+            <div className="navbar justify-between px-0">
                 <div className="navbar-start">
                     <div className="dropdown  z-50">
                         <div tabIndex={0} role="button" className="lg:hidden mr-3">
@@ -63,10 +62,10 @@ const Navbar = () => {
                             {NavItems}
                         </ul>
                     </div>
-                    <a className="text-3xl font-bold text-[#131313]">
+                    <h2 className="text-3xl font-bold ">
                         {/* <img className="h-16 w-16" src={logo} alt="" /> */}
                         Study<span className="bg-gradient-to-r from-[#7E90FE] to-[#9873FF] text-transparent bg-clip-text">Buddy</span>
-                    </a>
+                    </h2>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
@@ -110,7 +109,7 @@ const Navbar = () => {
                                 tabIndex={0}
                                 className='menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-md w-52'
                             >
-                                <li className="text-base font-bold">
+                                <li className="text-lg font-bold">
                                     <Link to='/mySubmited'>My Submited</Link>
                                 </li>
 

@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
-const AssignmentCard = ({ handleAssignment,assignment,assignments,setAssignments }) => {
+const AssignmentCard = ({ assignment,assignments,setAssignments }) => {
     // console.log(assignment);
 
     const { _id, title, marks, imageURL, difficultyLevel, userEmail } = assignment;
@@ -81,12 +81,7 @@ const AssignmentCard = ({ handleAssignment,assignment,assignments,setAssignments
                         </Link>
 
                         <button
-                            onClick={() => {
-                                handleDelete(_id, userEmail)
-                                handleAssignment(assignment)
-                            }
-                                
-                            }
+                            onClick={() => handleDelete(_id, userEmail)}
                             title="Delete"
                             className="btn text-white text-2xl bg-[#EA4744] hover:bg-[#c02b28]"
                         ><MdDelete></MdDelete></button>
