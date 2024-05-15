@@ -29,7 +29,7 @@ const UpdateAssignment = () => {
         const updatedAssignment = { title, description, marks, imageURL, difficultyLevel, date }
         // console.log(updatedAssignment);
 
-        fetch(`http://localhost:5000/assignment/${_id}`, {
+        fetch(`https://online-group-study-server-lilac.vercel.app/assignment/${_id}`, {
             method: "PUT",
             headers: {
                 "content-type": "application/json"

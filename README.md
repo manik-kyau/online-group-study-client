@@ -15,4 +15,5 @@ The following feature are alailable in StudyBuddy Project:
 
 
 ### Project Live Link:
+https://online-group-study-7e47f.web.app
 

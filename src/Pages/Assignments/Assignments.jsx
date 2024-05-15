@@ -8,7 +8,7 @@ const Assignments = () => {
     const [selactDifficultyLevel, setSelectDifficultyLevel] = useState(null);
 
     useEffect(() => {
-        fetch('http://localhost:5000/assignments')
+        fetch('https://online-group-study-server-lilac.vercel.app/assignments')
             .then(res => res.json())
             .then(data => {
                 setAssignments(data)

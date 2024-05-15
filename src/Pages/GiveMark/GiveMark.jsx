@@ -18,7 +18,7 @@ const GiveMark = () => {
         const update = { givemark, feedback, pdf, message, email, studentName, assignment_id, marks, title }
         // console.log(update);
 
-        fetch(`http://localhost:5000/submits/${_id}`, {
+        fetch(`https://online-group-study-server-lilac.vercel.app/submits/${_id}`, {
             method: "PUT",
             headers: {
                 "content-type": "application/json"

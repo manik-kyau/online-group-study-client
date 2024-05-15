@@ -42,12 +42,12 @@ const router = createBrowserRouter([
             {
                 path: '/details/:id',
                 element: <PrivateRoute><AssignmentDetails></AssignmentDetails></PrivateRoute>,
-                loader: ({params})=>fetch(`http://localhost:5000/assignments/${params.id}`),
+                loader: ({params})=>fetch(`https://online-group-study-server-lilac.vercel.app/assignments/${params.id}`),
             },
             {
                 path: '/update/:id',
                 element: <PrivateRoute><UpdateAssignment></UpdateAssignment></PrivateRoute>,
-                loader: ({params})=> fetch(`http://localhost:5000/assignments/${params.id}`)
+                loader: ({params})=> fetch(`https://online-group-study-server-lilac.vercel.app/assignments/${params.id}`)
             },
             {
                 path: '/mySubmited',
@@ -60,7 +60,7 @@ const router = createBrowserRouter([
             {
                 path: '/givemark/:id',
                 element: <PrivateRoute><GiveMark></GiveMark></PrivateRoute>,
-                loader: ({params})=> fetch(`http://localhost:5000/submits/${params.id}`)
+                loader: ({params})=> fetch(`https://online-group-study-server-lilac.vercel.app/submits/${params.id}`)
             },
 
         ]

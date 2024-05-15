@@ -72,7 +72,7 @@ const Register = () => {
                 // create user inMongodb
                 const user = { name, email, photo, password }
 
-                fetch('http://localhost:5000/users', {
+                fetch('https://online-group-study-server-lilac.vercel.app/users', {
                     method: "POST",
                     headers: {
                         "content-type": "application/json"
