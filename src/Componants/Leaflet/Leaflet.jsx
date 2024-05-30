@@ -16,7 +16,7 @@ const Leaflet = () => {
     return (
         <div className='mt-8 md:mt-24'>
 
-            <MapContainer center={position} zoom={13} className='w-full h-[300px] md:h-[400px] lg:h-[500px]'>
+            <MapContainer center={position} zoom={13} className='w-full h-[300px] md:h-[400px] lg:h-[450px]'>
                 <TileLayer
                     attribution='<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>'
                     url="https://api.maptiler.com/maps/topo-v2/256/{z}/{x}/{y}.png?key=EqHVdHYRx1jI6vE0GGzF"

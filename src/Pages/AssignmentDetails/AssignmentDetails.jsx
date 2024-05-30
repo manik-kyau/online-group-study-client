@@ -33,7 +33,7 @@ const AssignmentDetails = () => {
         }
         console.log(submit);
 
-        fetch('http://localhost:5000/submits', {
+        fetch('https://online-group-study-server-lilac.vercel.app/submits', {
             method: "POST",
             headers: {
                 "content-type": "application/json"

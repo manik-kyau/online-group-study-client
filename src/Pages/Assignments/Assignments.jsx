@@ -9,7 +9,7 @@ const Assignments = () => {
     const [selactDifficultyLevel, setSelectDifficultyLevel] = useState(null);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/assignments?search=${search}`)
+        fetch(`https://online-group-study-server-lilac.vercel.app/assignments?search=${search}`)
             .then(res => res.json())
             .then(data => {
                 setAssignments(data)
@@ -54,7 +54,7 @@ const Assignments = () => {
                                 </div>
 
                                 <div >
-                                    <input type="submit" value='Search' className="bg-gradient-to-r px-7 from-[#7E90FE] to-[#9873FF] text-white text-xl py-[13px] rounded-r-md" />
+                                    <input type="submit" value='Search' className="bg-gradient-to-r px-7 from-[#7E90FE] to-[#9873FF] text-white text-xl py-[13px] rounded-r-md cursor-pointer" />
                                 </div>
                             </div>
                         </form>
