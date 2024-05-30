@@ -15,7 +15,6 @@ const Assignments = () => {
                 setAssignments(data)
             })
     }, [search]);
-    // console.log(search);
 
     const difficultyLevels = Array.from(
         new Set(assignments.map((res) => res.difficultyLevel))
@@ -28,12 +27,11 @@ const Assignments = () => {
 
     const filterAssignments = selactDifficultyLevel ? assignments.filter((craf) => craf.difficultyLevel === selactDifficultyLevel.value) : assignments;
 
-    // console.log(search);
+    
     const handleSearch =(e) =>{
         e.preventDefault();
         const searchText = e.target.search.value;
-        setSearch(searchText)
-        // console.log(searchText);
+        setSearch(searchText);
     }
 
     return (
@@ -47,22 +45,21 @@ const Assignments = () => {
                     >Total Assignments</h2>
                 </div>
 
-                <div className="flex flex-col md:flex-row-reverse items-center">
-                <div className="w-1/2">
-                        <form onSubmit={handleSearch} className="border ">
-                            <div className="flex items-center">
-                                <div>
-                                    <input type="text" name='search' placeholder="Search" required="" className=" border  p-2 rounded focus:outline-none focus:ring focus:ring-opacity-25 focus:dark:ring-violet-600 dark:bg-gray-100" />
+                <div className="flex md:gap-8 flex-col md:flex-row-reverse justify-center items-center">
+                <div className="w-[450px]  mt-[16px]">
+                        <form onSubmit={handleSearch} className="">
+                            <div className="flex items-center border-2 rounded-md">
+                                <div className="w-full">
+                                    <input type="text" name='search' placeholder="Search" required="" className=" w-full border-0 px-3 py-[12px]  focus:outline-none placeholder:text-xl text-lg  " />
                                 </div>
 
                                 <div >
-                                    <input type="submit" value='Search' className="bg-gradient-to-r from-[#7E90FE] to-[#9873FF] text-white" />
-                                    {/* <input className="bg-gradient-to-r from-[#7E90FE] to-[#9873FF] text-white">Search</input> */}
+                                    <input type="submit" value='Search' className="bg-gradient-to-r px-7 from-[#7E90FE] to-[#9873FF] text-white text-xl py-[13px] rounded-r-md" />
                                 </div>
                             </div>
                         </form>
                     </div>
-                    <div className="mb-3 mt-7 border w-1/2">
+                    <div className="mb-3 mt-7">
                         <Select
                             options={difficultyLevelOptions}
                             isClearable
