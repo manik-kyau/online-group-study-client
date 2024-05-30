@@ -11,7 +11,7 @@ const MySubmited = () => {
     const url = `/submits?email=${user?.email}`
 
     useEffect(() => {
-        // fetch(`https://online-group-study-server-lilac.vercel.app/submits?email=${user?.email}`,{credentials:'include'})
+        // fetch(`http://localhost:5000/submits?email=${user?.email}`,{credentials:'include'})
         //     .then(res => res.json())
         //     .then(data => {
         //         setSubmitAssignment(data)

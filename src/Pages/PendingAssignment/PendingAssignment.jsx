@@ -10,7 +10,7 @@ const PendingAssignment = () => {
     // const { _id, title, email, marks, assignment_id, studentName, pdf } = pendingAssignment;
     const url = '/submition';
     useEffect(() => {
-        // fetch('https://online-group-study-server-lilac.vercel.app/submition',{credentials: 'include'})
+        // fetch('http://localhost:5000/submition',{credentials: 'include'})
         //     .then(res => res.json())
         //     .then(data => {
         //         // const remaining = data.filter(dta => dta.givemark === undefined);

@@ -14,7 +14,7 @@ const Leaflet = () => {
     const position = [23.6850, 90.3563];
 
     return (
-        <div className='mt-8 md:mt-14'>
+        <div className='mt-8 md:mt-24'>
 
             <MapContainer center={position} zoom={13} className='w-full h-[300px] md:h-[400px] lg:h-[500px]'>
                 <TileLayer

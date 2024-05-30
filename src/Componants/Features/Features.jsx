@@ -6,7 +6,7 @@ const Features = () => {
     const [features, setFeatures] = useState([]);
 
     useEffect(() => {
-        fetch('https://online-group-study-server-lilac.vercel.app/features')
+        fetch('http://localhost:5000/features')
             .then(res => res.json())
             .then(data => {
                 setFeatures(data)

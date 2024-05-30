@@ -50,7 +50,7 @@ const CreateAssignment = () => {
         }
 
         // send data to the server
-        fetch('https://online-group-study-server-lilac.vercel.app/assignments', {
+        fetch('http://localhost:5000/assignments', {
             method: "POST",
             headers: {
                 "content-type": "application/json"

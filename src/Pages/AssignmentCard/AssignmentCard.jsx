@@ -29,7 +29,7 @@ const AssignmentCard = ({ assignment,assignments,setAssignments }) => {
             }).then((result) => {
                 if (result.isConfirmed) {
 
-                    fetch(`https://online-group-study-server-lilac.vercel.app/assignments/${_id}`, {
+                    fetch(`http://localhost:5000/assignments/${_id}`, {
                         method: "DELETE"
                     })
                     .then(res => res.json())
